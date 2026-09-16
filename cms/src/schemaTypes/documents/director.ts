@@ -37,7 +37,6 @@ export const director = defineType({
       options: {
         list: [
           {title: 'Director', value: 'director'},
-          {title: 'Photographer', value: 'photographer'},
           {title: 'Animator', value: 'animator'},
         ],
         layout: 'radio',
@@ -120,18 +119,6 @@ export const director = defineType({
       options: {
         hotspot: true,
       },
-    }),
-    defineField({
-      name: 'relatedFilms',
-      title: 'Talent\'s films',
-      type: 'array',
-      of: [
-        {
-          type: 'reference',
-          to: [{type: 'film'}, {type: 'photography'}],
-        },
-      ],
-      validation: (Rule) => Rule.unique(),
     }),
     defineField({
       name: 'directorCtaText',

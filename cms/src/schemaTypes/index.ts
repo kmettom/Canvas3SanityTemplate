@@ -1,7 +1,6 @@
 import {director} from './documents/director'
 import {page} from './documents/page'
 import {film} from './documents/film'
-import {photography} from './documents/photography'
 import {article} from './documents/article'
 import {callToAction} from './objects/callToAction'
 import {infoSection} from './objects/infoSection'
@@ -24,12 +23,9 @@ import {footer} from './singletons/sections/footer'
 import {articleContent} from "./objects/articleContent";
 import {articleImageBlock} from "./objects/articleImageBlock";
 import {articleImageSlider} from "./objects/articleImageSlider";
-import {photoGallery} from "./objects/photoGallery";
-import {photoGalleryItem} from "./objects/photoGalleryItem";
 import {articlesPage} from "./singletons/pages/articles";
 import {welcome} from "./singletons/sections/welcome";
 import {inlineRichText} from "./objects/inlineRichText";
-import {photoGalleryRow} from "./objects/photoGalleryRow";
 
 // Export an array of all the schema types.  This is used in the Sanity Studio configuration. https://www.sanity.io/docs/schema-types
 export const schemaTypes = [
@@ -46,7 +42,6 @@ export const schemaTypes = [
   // ***Documents***
   page,
   film,
-  photography,
   article,
   director,
   // ***Objects***
@@ -65,7 +60,4 @@ export const schemaTypes = [
   articleImageSlider,
   articleContent,
   articleImageBlock,
-  photoGallery,
-  photoGalleryRow,
-  photoGalleryItem
 ]

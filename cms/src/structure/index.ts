@@ -27,7 +27,6 @@ const DISABLED_TYPES = [
   'settings',
   'assist.instruction.context',
   'film',
-  'photography',
   'director',
   'article',
   // 'page'
@@ -43,12 +42,7 @@ export const structure: StructureResolver = (S: StructureBuilder, context) =>
         S,
         context,
       }),
-      orderableDocumentListDeskItem({
-        type: 'photography',
-        title: 'Photography projects',
-        S,
-        context,
-      }),
+
       orderableDocumentListDeskItem({
         type: 'director',
         title: 'Talents',

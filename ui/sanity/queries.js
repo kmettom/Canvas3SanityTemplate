@@ -56,34 +56,6 @@ export const filmsQuery = defineQuery(`
   }
 `);
 
-//**********************
-// Photography
-//**********************
-
-export const photographyProjectQuery = defineQuery(`
-  *[_type == "photography" && status == "published"  && slug.current == $slug] | order(orderRank, _createdAt desc)[0]{
-    ...,
-  }
-`);
-
-export const photographyProjectFlatQuery = defineQuery(`
-  *[_type == "photography" && status == "published" && slug.current == $slug]
-    | order(orderRank, _createdAt desc)[0]{
-      ...,
-      "galleryItems": photoGallery[].items[]{
-        widthColumns,
-        imageItem{
-          ...,
-          alt,
-          asset->{
-            url,
-            metadata{dimensions}
-          }
-        }
-      }
-    }
-`);
-
 export const articlesPaginatedQuery = defineQuery(`
 {
   "items": *[_type in ["article"] && status == "published" && _id != *[_type == "articlesPage"][0].heroArticle._ref] 
