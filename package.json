@@ -1,0 +1,28 @@
+{
+  "name": "canvas3-sanity-template",
+  "description": "Canvas3 Sanity Template",
+  "scripts": {
+    "dev": "npm-run-all --parallel dev:*",
+    "dev:ui": "npm run dev --workspace=ui",
+    "dev:cms": "npm run dev --workspace=cms",
+    "deploy:cms": "npm run deploy --workspace=cms",
+    "import-sample-data": "cd studio && sanity dataset import sample-data.tar.gz --replace"
+  },
+  "keywords": [
+    "Sanity",
+    "Nuxt",
+    "Headless CMS",
+    "Visual Editing",
+    "Live Content API (LCAPI)",
+    "Real-time"
+  ],
+  "homepage": "https://github.com/kmettom/Canvas3SanityTemplate",
+  "workspaces": [
+    "ui",
+    "cms"
+  ],
+  "devDependencies": {
+    "@sanity/browserslist-config": "^1.0.5",
+    "npm-run-all": "^4.1.5"
+  }
+}

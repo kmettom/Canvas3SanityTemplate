@@ -1,0 +1,74 @@
+import { defineNuxtConfig } from "nuxt/config";
+import glsl from "vite-plugin-glsl";
+
+export default defineNuxtConfig({
+  runtimeConfig: {
+    alchemyToken: "nNWb6lDNz47nmopBgKXeO", // overridden by NUXT_ALCHEMY_TOKEN env var
+    public: {
+      // nothing here — keep the token private
+    },
+  },
+  sourcemap: {
+    client: true,
+    server: false,
+  },
+  devtools: { enabled: true },
+  routeRules: {},
+  modules: [
+    "@nuxt-modules/compression",
+    "@nuxt/eslint",
+    "@pinia/nuxt",
+    // "../canvas3-nuxt/src/module", // Canvas3 Nuxt module local dev path
+    "@canvas3/nuxt",
+    "@nuxtjs/sanity",
+  ],
+  sanity: {
+    projectId: process.env.NUXT_SANITY_PROJECT_ID,
+    dataset: process.env.NUXT_SANITY_DATASET,
+    // dataset: "development sanity start", // dev
+    apiVersion: process.env.NUXT_SANITY_API_VERSION || "2025-04-01",
+    useCdn: true,
+    token: process.env.NUXT_SANITY_API_READ_TOKEN,
+    perspective: "published",
+    visualEditing: {
+      token: process.env.NUXT_SANITY_API_READ_TOKEN,
+      studioUrl: process.env.NUXT_SANITY_STUDIO_URL,
+      zIndex: 51,
+    },
+  },
+  // image: {
+  //   target: "static",
+  //   dir: "public/",
+  // },
+
+  build: {
+    transpile: ["gsap", "@canvas3/nuxt"],
+  },
+
+  vite: {
+    plugins: [glsl()],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          // extractCSS: false,
+          additionalData: '@use "~/assets/scss/common.scss" as *;',
+        },
+      },
+    },
+  },
+
+  hooks: {
+    "build:manifest": (manifest) => {
+      const css = manifest["node_modules/nuxt/dist/app/entry.js"]?.css;
+      if (css) {
+        for (let i = css.length - 1; i >= 0; i--) {
+          if (css[i]?.startsWith("entry")) css.splice(i, 1);
+        }
+      }
+    },
+  },
+  nitro: {
+    compressPublicAssets: true,
+  },
+  compatibilityDate: "2025-01-08",
+});

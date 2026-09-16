@@ -1,0 +1,48 @@
+{
+  "name": "tomaskmet.com",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node .output/server/index.mjs",
+    "build": "nuxt build",
+    "start-nuxt": "nuxt start",
+    "dev": "prettier --write . && npm run lint:eslint && nuxt dev --port 4200",
+    "prettier": "prettier --write .",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "npm run prettier && npm run lint:eslint ",
+    "lint:eslint": "eslint . --fix",
+    "lintfix": "eslint . --fix && prettier --write --list-different ."
+  },
+  "devDependencies": {
+    "@nuxt-modules/compression": "^0.1.0",
+    "@nuxt/eslint": "^0.7.4",
+    "@nuxtjs/sanity": "^2.5.0",
+    "@nuxtjs/style-resources": "^1.2.1",
+    "@pinia/nuxt": "^0.9.0",
+    "@types/big.js": "^6.2.2",
+    "@types/three": "^0.183.0",
+    "@vercel/speed-insights": "^1.2.0",
+    "@vueuse/core": "^12.4.0",
+    "big.js": "^7.0.1",
+    "gsap": "3.14.2",
+    "nuxt": "^4.4.5",
+    "prettier": "^3.6.2",
+    "sass-embedded": "^1.89.2",
+    "three": "^0.178.0",
+    "typescript": "^5.7.2",
+    "viem": "^0.2.1",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-glsl": "^1.5.1",
+    "vue": "^3.5.34",
+    "vue-router": "^4.5.1"
+  },
+  "dependencies": {
+    "@canvas3/nuxt": "^0.1.55"
+  }
+}
