@@ -1,15 +1,15 @@
 import {defineField, defineType} from 'sanity'
 import {VideoIcon} from '@sanity/icons'
 
-export const filmCTA = defineType({
-  name: 'filmCTA',
+export const projectCTA = defineType({
+  name: 'projectCTA',
   title: 'CTA Section with Vimeo',
   type: 'object',
   icon: VideoIcon,
   fields: [
     defineField({
       name: 'vimeo',
-      title: 'Vimeo Film ID',
+      title: 'Vimeo project ID',
       type: 'string',
     }),
     defineField({
@@ -46,7 +46,7 @@ export const filmCTA = defineType({
     },
     prepare({media}) {
       return {
-        title: 'Film CTA section',
+        title: 'project CTA section',
         media,
       }
     },

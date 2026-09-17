@@ -33,8 +33,8 @@ export const home = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'filmThumbsAmount',
-      title: 'Amount of film thumbs on Home page',
+      name: 'projectThumbsAmount',
+      title: 'Amount of project thumbs on Home page',
       type: 'number',
       group: 'content',
       validation: (rule) => rule.required(),

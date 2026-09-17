@@ -9,7 +9,7 @@ export const articlesPage = defineType({
       name: 'heroArticle',
       title: 'Hero Article',
       type: 'reference',
-      to: [{type: 'article'}, {type: 'film'}],
+      to: [{type: 'article'}, {type: 'project'}],
     }),
   ],
   preview: {

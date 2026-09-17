@@ -2,13 +2,13 @@ import {VideoIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list'
 /**
- * Film schema.  Define and edit the fields for the 'film' content type.
+ * project schema.  Define and edit the fields for the 'project' content type.
  * Learn more: https://www.sanity.io/docs/schema-types
  */
 
-export const film = defineType({
-  name: 'film',
-  title: 'Film',
+export const project = defineType({
+  name: 'project',
+  title: 'project',
   icon: VideoIcon,
   type: 'document',
   orderings: [orderRankOrdering],
@@ -41,7 +41,7 @@ export const film = defineType({
       },
       initialValue: 'draft',
       validation: (Rule) =>
-        Rule.required().error('Please select the film status'),
+        Rule.required().error('Please select the project status'),
       group: 'content',
     }),
     defineField({
@@ -62,7 +62,7 @@ export const film = defineType({
       name: 'slug',
       title: 'URL',
       type: 'slug',
-      description: 'A URL is required for the film to show up in the preview',
+      description: 'A URL is required for the project to show up in the preview',
       options: {
         source: 'title',
         maxLength: 96,
@@ -124,11 +124,11 @@ export const film = defineType({
     }),
     defineField({
       name: 'vimeo',
-      title: 'Vimeo Film ID',
+      title: 'Vimeo project ID',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
-    orderRankField({type: 'film'}),
+    orderRankField({type: 'project'}),
   ],
   preview: {
     select: {

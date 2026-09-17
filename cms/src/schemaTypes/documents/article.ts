@@ -43,7 +43,7 @@ export const article = defineType({
       },
       initialValue: 'draft',
       validation: (Rule) =>
-        Rule.required().error('Please select the film status'),
+        Rule.required().error('Please select the project status'),
       group: 'content',
     }),
     defineField({
@@ -169,7 +169,7 @@ export const article = defineType({
         {type: 'articleContent'},
         {type: 'articleImageBlock'},
         {type: 'articleImageSlider'},
-        {type: 'filmCTA'},
+        {type: 'projectCTA'},
         {type: 'imageCTA'},
       ],
       group: 'content',

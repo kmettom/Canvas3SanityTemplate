@@ -28,7 +28,7 @@ export const director = defineType({
       },
       initialValue: 'draft',
       validation: (Rule) =>
-        Rule.required().error('Please select the film status'),
+        Rule.required().error('Please select the project status'),
     }),
     defineField({
       name: 'talentType',

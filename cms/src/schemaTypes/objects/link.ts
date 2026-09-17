@@ -3,7 +3,7 @@ import {LinkIcon} from '@sanity/icons'
 
 /**
  * Link schema object. This link object lets the user first select the type of link and then
- * then enter the URL, page reference, or film reference - depending on the type selected.
+ * then enter the URL, page reference, or project reference - depending on the type selected.
  * Learn more: https://www.sanity.io/docs/object-type
  */
 
@@ -22,7 +22,7 @@ export const link = defineType({
         list: [
           {title: 'URL', value: 'href'},
           {title: 'Page', value: 'page'},
-          {title: 'film', value: 'film'},
+          {title: 'project', value: 'project'},
         ],
         layout: 'radio',
       },
@@ -57,16 +57,16 @@ export const link = defineType({
         }),
     }),
     defineField({
-      name: 'film',
-      title: 'Film',
+      name: 'project',
+      title: 'project',
       type: 'reference',
-      to: [{type: 'film'}],
-      hidden: ({parent}) => parent?.linkType !== 'film',
+      to: [{type: 'project'}],
+      hidden: ({parent}) => parent?.linkType !== 'project',
       validation: (Rule) =>
-        // Custom validation to ensure film reference is provided if the link type is 'film'
+        // Custom validation to ensure project reference is provided if the link type is 'project'
         Rule.custom((value, context: any) => {
-          if (context.parent?.linkType === 'film' && !value) {
-            return 'Film reference is required when Link Type is Film'
+          if (context.parent?.linkType === 'project' && !value) {
+            return 'project reference is required when Link Type is project'
           }
           return true
         }),

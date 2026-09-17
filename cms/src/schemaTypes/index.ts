@@ -1,13 +1,13 @@
 import {director} from './documents/director'
 import {page} from './documents/page'
-import {film} from './documents/film'
+import {project} from './documents/project'
 import {article} from './documents/article'
 import {callToAction} from './objects/callToAction'
 import {infoSection} from './objects/infoSection'
 import {contactBlock} from './objects/contactBlock'
 import {contactPerson} from './objects/contactPerson'
 import {socialNetwork} from './objects/socialNetwork'
-import {filmCTA} from './objects/filmCTA'
+import {projectCTA} from './objects/projectCTA'
 import {imageCTA} from './objects/imageCTA'
 import {gallery} from './objects/gallery'
 import {legalPage} from './objects/legalPage'
@@ -41,7 +41,7 @@ export const schemaTypes = [
   welcome,
   // ***Documents***
   page,
-  film,
+  project,
   article,
   director,
   // ***Objects***
@@ -54,7 +54,7 @@ export const schemaTypes = [
   contactPerson,
   legalPage,
   socialNetwork,
-  filmCTA,
+  projectCTA,
   imageCTA,
   gallery,
   articleImageSlider,
