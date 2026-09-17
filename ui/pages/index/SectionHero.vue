@@ -2,19 +2,10 @@
   <div class="hero-section-wrapper">
     <Container additional-class="hero-section">
       <div class="hero-content-line hero-line-canvas">
-        <h2 class="heading-1">Canvas3 Sanity template</h2>
+        <h2 class="heading-1">{{homePage.header}}</h2>
       </div>
     </Container>
     <div class="hero-bg-image">
-      <!--      <img-->
-      <!--        v-canvas3-image="{-->
-      <!--          uniforms: imageUniforms,-->
-      <!--          shaderName: 'example0',-->
-      <!--        }"-->
-      <!--        fetchPriority="high"-->
-      <!--        :src="'/images/08.webp'"-->
-      <!--        alt="background wave on beach"-->
-      <!--      />-->
     </div>
   </div>
 </template>
@@ -24,6 +15,9 @@ import Container from "~/components/common/Container.vue";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { pageTransition } from "~/utils/animations/pageTransition";
+import {homePageQuery} from "~/sanity/queries";
+
+const { data: homePage } = await useSanityQuery(homePageQuery);
 
 gsap.registerPlugin(SplitText);
 
@@ -47,6 +41,9 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
+.heading-1{
+  color: var(--light-color);
+}
 .hero-section-wrapper {
   position: relative;
   @include respond-width($w-s) {
