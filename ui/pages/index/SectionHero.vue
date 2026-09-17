@@ -2,20 +2,23 @@
   <div class="hero-section-wrapper">
     <Container additional-class="hero-section">
       <div class="hero-content-line hero-line-canvas">
-        <h2 class="heading-1">{{homePage.header}}</h2>
+        <h2 class="heading-1">
+          <PortableText :value="homePage.header" />
+        </h2>
       </div>
     </Container>
-    <div class="hero-bg-image">
-    </div>
+    <div class="hero-bg-image" />
   </div>
 </template>
 
 <script setup lang="ts">
+import { PortableText } from "@portabletext/vue";
 import Container from "~/components/common/Container.vue";
 import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { pageTransition } from "~/utils/animations/pageTransition";
-import {homePageQuery} from "~/sanity/queries";
+import { homePageQuery } from "~/sanity/queries";
+import type { Film } from '../../../cms/sanity.types'
 
 const { data: homePage } = await useSanityQuery(homePageQuery);
 
@@ -41,7 +44,7 @@ onMounted(() => {
 </script>
 
 <style lang="scss" scoped>
-.heading-1{
+.heading-1 {
   color: var(--light-color);
 }
 .hero-section-wrapper {

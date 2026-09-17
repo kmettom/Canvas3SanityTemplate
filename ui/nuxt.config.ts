@@ -15,12 +15,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   routeRules: {},
   modules: [
+    "@nuxtjs/sanity",
     "@nuxt-modules/compression",
     "@nuxt/eslint",
     "@pinia/nuxt",
     // "../canvas3-nuxt/src/module", // Canvas3 Nuxt module local dev path
     "@canvas3/nuxt",
-    "@nuxtjs/sanity",
   ],
   sanity: {
     projectId: process.env.NUXT_SANITY_PROJECT_ID,
