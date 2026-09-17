@@ -58,7 +58,7 @@ export const link = defineType({
     }),
     defineField({
       name: 'project',
-      title: 'project',
+      title: 'Project',
       type: 'reference',
       to: [{type: 'project'}],
       hidden: ({parent}) => parent?.linkType !== 'project',

@@ -3,13 +3,13 @@ import {defineField, defineType} from 'sanity'
 import {orderRankField, orderRankOrdering} from "@sanity/orderable-document-list";
 
 /**
- * Directors schema.  Define and edit the fields for the 'director' content type.
+ * authors schema.  Define and edit the fields for the 'author' content type.
  * Learn more: https://www.sanity.io/docs/schema-types
  */
 
-export const director = defineType({
-  name: 'director',
-  title: 'Talent',
+export const author = defineType({
+  name: 'author',
+  title: 'Author',
   icon: UserIcon,
   type: 'document',
   orderings: [orderRankOrdering],
@@ -31,19 +31,19 @@ export const director = defineType({
         Rule.required().error('Please select the project status'),
     }),
     defineField({
-      name: 'talentType',
-      title: 'Talent type',
+      name: 'authorType',
+      title: 'Author type',
       type: 'string',
       options: {
         list: [
-          {title: 'Director', value: 'director'},
+          {title: 'author', value: 'author'},
           {title: 'Animator', value: 'animator'},
         ],
         layout: 'radio',
       },
-      initialValue: 'director',
+      initialValue: 'author',
       validation: (Rule) =>
-        Rule.required().error('Please talent type'),
+        Rule.required().error('Please author type'),
     }),
     defineField({
       name: 'name',
@@ -55,7 +55,7 @@ export const director = defineType({
       name: 'slug',
       title: 'URL',
       type: 'slug',
-      description: 'A URL is required for the talent unique link',
+      description: 'A URL is required for the author unique link',
       options: {
         source: 'name',
         maxLength: 96,
@@ -71,7 +71,7 @@ export const director = defineType({
     }),
     defineField({
       name: 'navImage',
-      title: "Talent's menu image",
+      title: "Author's menu image",
       type: 'image',
       fields: [
         defineField({
@@ -97,7 +97,7 @@ export const director = defineType({
     }),
     defineField({
       name: 'headshotImage',
-      title: "Talent's headshot image for page header",
+      title: "Author's headshot image for page header",
       type: 'image',
       fields: [
         defineField({
@@ -121,23 +121,23 @@ export const director = defineType({
       },
     }),
     defineField({
-      name: 'directorCtaText',
-      title: 'Related talent\'s contact text',
+      name: 'authorCtaText',
+      title: 'Related author\'s contact text',
       type: 'string',
       validation: (rule) => rule.required(),
     }),
 
     defineField({
-      name: 'relatedDirectors',
-      title: 'Related talents',
+      name: 'relatedauthors',
+      title: 'Related authors',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{type: 'director'}],
+          to: [{type: 'author'}],
         },
       ],
-      validation: (Rule) => Rule.unique().max(4).warning('Maximum 4 talents'), // prevent duplicates
+      validation: (Rule) => Rule.unique().max(4).warning('Maximum 4 authors'), // prevent duplicates
     }),
     defineField({
       name: 'seoTitle',
@@ -153,7 +153,7 @@ export const director = defineType({
       description:
         'Description used for search engines and social media sharing (recommended: 150-160 characters)',
     }),
-    orderRankField({type: 'director'}),
+    orderRankField({type: 'author'}),
   ],
   // List preview configuration. https://www.sanity.io/docs/previews-list-views
   preview: {

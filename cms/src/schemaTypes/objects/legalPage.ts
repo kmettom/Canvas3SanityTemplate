@@ -14,7 +14,7 @@ export const legalPage = defineType({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
-      description: 'A slug is required for the director unique link',
+      description: 'A slug is required for the author unique link',
       options: {
         source: 'title',
         maxLength: 96,

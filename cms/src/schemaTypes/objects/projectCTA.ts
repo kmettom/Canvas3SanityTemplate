@@ -46,7 +46,7 @@ export const projectCTA = defineType({
     },
     prepare({media}) {
       return {
-        title: 'project CTA section',
+        title: 'Project CTA section',
         media,
       }
     },

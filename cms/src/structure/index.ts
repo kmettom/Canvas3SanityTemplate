@@ -27,7 +27,7 @@ const DISABLED_TYPES = [
   'settings',
   'assist.instruction.context',
   'project',
-  'director',
+  'author',
   'article',
   // 'page'
 ]
@@ -44,8 +44,8 @@ export const structure: StructureResolver = (S: StructureBuilder, context) =>
       }),
 
       orderableDocumentListDeskItem({
-        type: 'director',
-        title: 'Talents',
+        type: 'author',
+        title: 'Authors',
         S,
         context,
       }),
@@ -58,7 +58,7 @@ export const structure: StructureResolver = (S: StructureBuilder, context) =>
 
       S.divider(),
 
-      // Generic document types (projects/directors/articles filtered out above)
+      // Generic document types (projects/authors/articles filtered out above)
       ...S.documentTypeListItems()
         .filter((listItem: any) => !DISABLED_TYPES.includes(listItem.getId()))
         .map((listItem) => listItem.title(pluralize(listItem.getTitle() as string))),

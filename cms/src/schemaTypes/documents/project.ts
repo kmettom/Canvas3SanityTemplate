@@ -8,7 +8,7 @@ import {orderRankField, orderRankOrdering} from '@sanity/orderable-document-list
 
 export const project = defineType({
   name: 'project',
-  title: 'project',
+  title: 'Project',
   icon: VideoIcon,
   type: 'document',
   orderings: [orderRankOrdering],

@@ -55,7 +55,7 @@ export const article = defineType({
         list: [
           { title: 'Large headline (Events)', value: 'large_headline' },//event
           { title: 'Full Background Image (Latest Work)', value: 'full_bg_image' },//latest work
-          { title: 'Small Corner Image (Talent)', value: 'corner_image' }, //talent
+          { title: 'Small Corner Image (author)', value: 'corner_image' }, //author
         ],
         layout: 'dropdown',
       },

@@ -1,4 +1,4 @@
-import {director} from './documents/director'
+import {author} from './documents/author'
 import {page} from './documents/page'
 import {project} from './documents/project'
 import {article} from './documents/article'
@@ -43,7 +43,7 @@ export const schemaTypes = [
   page,
   project,
   article,
-  director,
+  author,
   // ***Objects***
   blockContent,
   inlineRichText,
