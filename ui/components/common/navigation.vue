@@ -101,12 +101,12 @@ watch(
   pointer-events: auto;
   overflow-y: hidden;
 
-  span {
+  a {
     display: inline-block;
     position: relative;
   }
 
-  &:hover span {
+  &:hover a {
     font-weight: bold;
   }
 
