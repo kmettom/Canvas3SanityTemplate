@@ -116,11 +116,9 @@ export type ContactPerson = {
 export type ContactBlock = {
   _type: "contactBlock";
   heading?: string;
-  contacts?: Array<
-    {
-      _key: string;
-    } & ContactPerson
-  >;
+  contacts?: Array<{
+    _key: string;
+  } & ContactPerson>;
 };
 
 export type Link = {
@@ -273,14 +271,11 @@ export type Page = {
   slug: Slug;
   heading: string;
   subheading?: string;
-  pageBuilder?: Array<
-    | ({
-        _key: string;
-      } & CallToAction)
-    | ({
-        _key: string;
-      } & InfoSection)
-  >;
+  pageBuilder?: Array<{
+    _key: string;
+  } & CallToAction | {
+    _key: string;
+  } & InfoSection>;
   seoTitle?: string;
   seoDescription?: string;
 };
@@ -321,19 +316,17 @@ export type ArticlesPage = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  heroArticle?:
-    | {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "article";
-      }
-    | {
-        _ref: string;
-        _type: "reference";
-        _weak?: boolean;
-        [internalGroqTypeReferenceTo]?: "project";
-      };
+  heroArticle?: {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "article";
+  } | {
+    _ref: string;
+    _type: "reference";
+    _weak?: boolean;
+    [internalGroqTypeReferenceTo]?: "project";
+  };
 };
 
 export type Project = {
@@ -413,28 +406,20 @@ export type Article = {
     alt?: string;
     _type: "image";
   };
-  socials?: Array<
-    {
-      _key: string;
-    } & SocialNetwork
-  >;
-  content?: Array<
-    | ({
-        _key: string;
-      } & ArticleContent)
-    | ({
-        _key: string;
-      } & ArticleImageBlock)
-    | ({
-        _key: string;
-      } & ArticleImageSlider)
-    | ({
-        _key: string;
-      } & ProjectCTA)
-    | ({
-        _key: string;
-      } & ImageCTA)
-  >;
+  socials?: Array<{
+    _key: string;
+  } & SocialNetwork>;
+  content?: Array<{
+    _key: string;
+  } & ArticleContent | {
+    _key: string;
+  } & ArticleImageBlock | {
+    _key: string;
+  } & ArticleImageSlider | {
+    _key: string;
+  } & ProjectCTA | {
+    _key: string;
+  } & ImageCTA>;
   seoTitle?: string;
   seoDescription?: string;
   orderRank?: string;
@@ -466,11 +451,9 @@ export type Legal = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  page?: Array<
-    {
-      _key: string;
-    } & LegalPage
-  >;
+  page?: Array<{
+    _key: string;
+  } & LegalPage>;
 };
 
 export type About = {
@@ -536,16 +519,12 @@ export type Contact = {
   address: string;
   email: string;
   telephone: string;
-  socials?: Array<
-    {
-      _key: string;
-    } & SocialNetwork
-  >;
-  contacts?: Array<
-    {
-      _key: string;
-    } & ContactBlock
-  >;
+  socials?: Array<{
+    _key: string;
+  } & SocialNetwork>;
+  contacts?: Array<{
+    _key: string;
+  } & ContactBlock>;
 };
 
 export type Home = {
@@ -595,21 +574,17 @@ export type SanityAssistInstructionTask = {
 
 export type SanityAssistTaskStatus = {
   _type: "sanity.assist.task.status";
-  tasks?: Array<
-    {
-      _key: string;
-    } & SanityAssistInstructionTask
-  >;
+  tasks?: Array<{
+    _key: string;
+  } & SanityAssistInstructionTask>;
 };
 
 export type SanityAssistSchemaTypeAnnotations = {
   _type: "sanity.assist.schemaType.annotations";
   title?: string;
-  fields?: Array<
-    {
-      _key: string;
-    } & SanityAssistSchemaTypeField
-  >;
+  fields?: Array<{
+    _key: string;
+  } & SanityAssistSchemaTypeField>;
 };
 
 export type SanityAssistOutputType = {
@@ -662,23 +637,18 @@ export type SanityAssistInstructionUserInput = {
 };
 
 export type SanityAssistInstructionPrompt = Array<{
-  children?: Array<
-    | {
-        marks?: Array<string>;
-        text?: string;
-        _type: "span";
-        _key: string;
-      }
-    | ({
-        _key: string;
-      } & SanityAssistInstructionFieldRef)
-    | ({
-        _key: string;
-      } & SanityAssistInstructionContext)
-    | ({
-        _key: string;
-      } & SanityAssistInstructionUserInput)
-  >;
+  children?: Array<{
+    marks?: Array<string>;
+    text?: string;
+    _type: "span";
+    _key: string;
+  } | {
+    _key: string;
+  } & SanityAssistInstructionFieldRef | {
+    _key: string;
+  } & SanityAssistInstructionContext | {
+    _key: string;
+  } & SanityAssistInstructionUserInput>;
   style?: "normal";
   listItem?: never;
   markDefs?: null;
@@ -699,24 +669,19 @@ export type SanityAssistInstruction = {
   title?: string;
   userId?: string;
   createdById?: string;
-  output?: Array<
-    | ({
-        _key: string;
-      } & SanityAssistOutputField)
-    | ({
-        _key: string;
-      } & SanityAssistOutputType)
-  >;
+  output?: Array<{
+    _key: string;
+  } & SanityAssistOutputField | {
+    _key: string;
+  } & SanityAssistOutputType>;
 };
 
 export type SanityAssistSchemaTypeField = {
   _type: "sanity.assist.schemaType.field";
   path?: string;
-  instructions?: Array<
-    {
-      _key: string;
-    } & SanityAssistInstruction
-  >;
+  instructions?: Array<{
+    _key: string;
+  } & SanityAssistInstruction>;
 };
 
 export type SanityImagePaletteSwatch = {
@@ -815,56 +780,5 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type AllSanitySchemaTypes =
-  | ArticleImageBlock
-  | ArticleContent
-  | ArticleImageSlider
-  | Gallery
-  | ImageCTA
-  | ProjectCTA
-  | SocialNetwork
-  | LegalPage
-  | ContactPerson
-  | ContactBlock
-  | Link
-  | CallToAction
-  | InfoSection
-  | InlineRichText
-  | BlockContent
-  | Author
-  | SanityImageCrop
-  | SanityImageHotspot
-  | Slug
-  | Page
-  | Welcome
-  | ArticlesPage
-  | Project
-  | Article
-  | Footer
-  | Articles
-  | Legal
-  | About
-  | Contact
-  | Home
-  | Settings
-  | SanityAssistInstructionTask
-  | SanityAssistTaskStatus
-  | SanityAssistSchemaTypeAnnotations
-  | SanityAssistOutputType
-  | SanityAssistOutputField
-  | SanityAssistInstructionContext
-  | AssistInstructionContext
-  | SanityAssistInstructionUserInput
-  | SanityAssistInstructionPrompt
-  | SanityAssistInstructionFieldRef
-  | SanityAssistInstruction
-  | SanityAssistSchemaTypeField
-  | SanityImagePaletteSwatch
-  | SanityImagePalette
-  | SanityImageDimensions
-  | SanityImageMetadata
-  | SanityFileAsset
-  | SanityAssetSourceData
-  | SanityImageAsset
-  | Geopoint;
+export type AllSanitySchemaTypes = ArticleImageBlock | ArticleContent | ArticleImageSlider | Gallery | ImageCTA | ProjectCTA | SocialNetwork | LegalPage | ContactPerson | ContactBlock | Link | CallToAction | InfoSection | InlineRichText | BlockContent | Author | SanityImageCrop | SanityImageHotspot | Slug | Page | Welcome | ArticlesPage | Project | Article | Footer | Articles | Legal | About | Contact | Home | Settings | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;
