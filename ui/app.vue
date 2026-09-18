@@ -104,7 +104,7 @@ const welcomeFinished = () => {
   contentActive.value = true;
 };
 // TODO:
-//  navigation and transitions - navigation should be on top always
-//  Clean CSS styles, leave basic setup
+// Clean CSS styles, leave basic setup
 // clean rest of code left overs for clean start
+// home page clean
 </script>
