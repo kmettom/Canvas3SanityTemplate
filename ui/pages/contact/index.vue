@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="heading-1" v-if="contactPage">
+    <h2 v-if="contactPage" class="heading-1">
       {{ contactPage.header }}
     </h2>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="body-xs navigation-bar">
-    <nav v-if="homePage" class="navigation-items">
+    <nav class="navigation-items">
       <div
         v-for="(navItem, index) in navigationItems"
         :key="navItem.href"
@@ -14,24 +14,6 @@
         </nuxt-link>
       </div>
     </nav>
-    <!--    <nav v-else class="navigation-items">-->
-    <!--      <NuxtLink-->
-    <!--        :ref="navItemRefs.set"-->
-    <!--        href="/"-->
-    <!--        class="navigation-item nav-play nav-link-home"-->
-    <!--        @mouseenter="navigationHoverAnimatePlay($el, 'nav-link-home')"-->
-    <!--      >-->
-    <!--        <span> Home </span>-->
-    <!--      </NuxtLink>-->
-    <!--      <NuxtLink-->
-    <!--        :ref="navItemRefs.set"-->
-    <!--        href="/playground"-->
-    <!--        class="navigation-item nav-play nav-link-play"-->
-    <!--        @mouseenter="navigationHoverAnimatePlay($el, 'nav-link-play')"-->
-    <!--      >-->
-    <!--        <span> Playground </span>-->
-    <!--      </NuxtLink>-->
-    <!--    </nav>-->
   </div>
 </template>
 <script setup lang="ts">
@@ -51,11 +33,6 @@ const route = useRoute();
 const homePage = computed(() => {
   return route.name === "index";
 });
-
-// const navigationHoverAnimatePlay = (el, elClassName) => {
-//   const text = el?.querySelector(`.${elClassName} span`);
-//   animateTextSpan(text);
-// };
 
 const animateTextSpan = (text: HTMLElement) => {
   if (!text) return;
@@ -79,13 +56,6 @@ const navigationHoverAnimate = (index: number) => {
 };
 
 const navigationStore = useNavigationStore();
-
-const goToSection = (sectionId: string) => {
-  Canvas3.scrollToElBySelector(
-    `.page-section[data-nav-id="${sectionId}"]`,
-    0.75,
-  );
-};
 
 const navigationItems = computed(() => navigationStore.navigationItems);
 const activeNav = computed(() => navigationStore.activeNavItem);

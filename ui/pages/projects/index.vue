@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="heading-1" v-if="projectsPage">
+    <h2 v-if="projectsPage" class="heading-1">
       {{ projectsPage.projectsHeadline }}
     </h2>
   </div>
