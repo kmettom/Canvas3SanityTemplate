@@ -471,38 +471,7 @@ export type About = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  header: InlineRichText;
-  aboutText: string;
-  aboutHeader: InlineRichText;
-  aboutImage: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  associateImage: {
-    asset?: {
-      _ref: string;
-      _type: "reference";
-      _weak?: boolean;
-      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
-    };
-    media?: unknown;
-    hotspot?: SanityImageHotspot;
-    crop?: SanityImageCrop;
-    alt?: string;
-    _type: "image";
-  };
-  associateHeader: string;
-  associateAbout: string;
-  associateSubheader: InlineRichText;
+  header: string;
 };
 
 export type Contact = {

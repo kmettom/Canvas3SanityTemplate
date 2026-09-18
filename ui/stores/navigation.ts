@@ -10,12 +10,10 @@ export const useNavigationStore = defineStore("navigationStore", {
     pageTransitionInProgress: false,
     webFirstLoadDone: false,
     navigationItems: [
-      { name: "Home", id: "home" },
-      { name: "About", id: "about" },
-      { name: "Examples", id: "examples" },
-      { name: "Playground", id: "playground" },
-      { name: "Roadmap", id: "roadmap" },
-      { name: "Contact", id: "contact" },
+      { name: "Home", href: "home" },
+      { name: "About", href: "about" },
+      { name: "Projects", href: "projects" },
+      { name: "Contact", href: "contact" },
     ],
   }),
   actions: {

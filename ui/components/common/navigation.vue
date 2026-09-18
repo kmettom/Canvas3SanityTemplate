@@ -3,16 +3,15 @@
     <nav v-if="homePage" class="navigation-items">
       <div
         v-for="(navItem, index) in navigationItems"
-        :key="navItem.id"
+        :key="navItem.href"
         :ref="navItemRefs.set"
         class="navigation-item"
-        :class="{ active: activeNav === navItem.id }"
-        @click="goToSection(navItem.id)"
+        :class="{ active: activeNav === navItem.href }"
         @mouseenter="navigationHoverAnimate(index)"
       >
-        <span>
+        <nuxt-link :href="navItem.href">
           {{ navItem.name }}
-        </span>
+        </nuxt-link>
       </div>
     </nav>
     <!--    <nav v-else class="navigation-items">-->

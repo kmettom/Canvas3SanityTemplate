@@ -25,6 +25,7 @@
       }"
     />
   </NuxtLayout>
+
   <!--  TODO: Cursor implement -->
   <!--  <Cursor />-->
 

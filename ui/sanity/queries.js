@@ -116,6 +116,7 @@ export const welcomeScreenQuery = defineQuery(`*[_type == "welcome"][0]{
 }`);
 export const homePageQuery = defineQuery(`*[_type == "home"][0]`);
 export const articlesPageQuery = defineQuery(`*[_type == "articlesPage"][0]`);
+export const projectsPageQuery = defineQuery(`*[_type == "projectsPage"][0]`);
 export const contactPageQuery = defineQuery(`*[_type == "contact"][0]{
 ...,
 }`);
