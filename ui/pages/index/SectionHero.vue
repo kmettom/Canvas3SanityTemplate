@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-section-wrapper">
+  <div class="hero-section-wrapper" v-if="homePage">
     <Container additional-class="hero-section">
       <div class="hero-content-line hero-line-canvas">
         <h2 class="heading-1">
@@ -18,9 +18,9 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { pageTransition } from "~/utils/animations/pageTransition";
 import { homePageQuery } from "~/sanity/queries";
-import type { Film } from '../../../cms/sanity.types'
+import type { Home } from "~/sanity/types.ts";
 
-const { data: homePage } = await useSanityQuery(homePageQuery);
+const { data: homePage } = await useSanityQuery<Home>(homePageQuery);
 
 gsap.registerPlugin(SplitText);
 

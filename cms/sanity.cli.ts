@@ -17,9 +17,9 @@ export default defineCliConfig({
   },
   // studioHost: process.env.SANITY_STUDIO_STUDIO_HOST || '', //deprecated
   // autoUpdates: true,//deprecated
-  // typegen: {
-  //   schema: 'schema.json',
-  //   generates: './sanity.types.ts',
-  // },
+  typegen: {
+    schema: 'schema.json',
+    generates: '../ui/sanity/types.ts',
+  },
 })
 
