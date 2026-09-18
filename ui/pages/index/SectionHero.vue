@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-section-wrapper" v-if="homePage">
+  <div v-if="homePage" class="hero-section-wrapper">
     <Container additional-class="hero-section">
       <div class="hero-content-line hero-line-canvas">
         <h2 class="heading-1">

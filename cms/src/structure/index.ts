@@ -1,12 +1,7 @@
-// import {CogIcon,BlockElementIcon} from '@sanity/icons'
-// import type {StructureBuilder, StructureResolver} from 'sanity/structure'
-// import pluralize from 'pluralize-esm'
-
 import {CogIcon, BlockElementIcon} from '@sanity/icons'
 import type {StructureBuilder, StructureResolver} from 'sanity/structure'
 import pluralize from 'pluralize-esm'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
-
 
 /**
  * Structure builder is useful whenever you want to control how documents are grouped and
@@ -17,6 +12,7 @@ import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 const DISABLED_TYPES = [
   'welcome',
   'articlesPage',
+  'projectsPage',
   'page',
   'home',
   'contact',
@@ -71,6 +67,9 @@ export const structure: StructureResolver = (S: StructureBuilder, context) =>
             S.listItem()
               .title('Home')
               .child(S.document().schemaType('home').documentId('home')),
+            S.listItem()
+              .title('Projects')
+              .child(S.document().schemaType('projectsPage').documentId('projectsPage')),
             S.listItem()
               .title('Articles')
               .child(S.document().schemaType('articlesPage').documentId('articlesPage')),

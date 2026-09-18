@@ -24,6 +24,7 @@ import {articleContent} from "./objects/articleContent";
 import {articleImageBlock} from "./objects/articleImageBlock";
 import {articleImageSlider} from "./objects/articleImageSlider";
 import {articlesPage} from "./singletons/pages/articles";
+import {projectsPage} from "./singletons/pages/projects";
 import {welcome} from "./singletons/sections/welcome";
 import {inlineRichText} from "./objects/inlineRichText";
 
@@ -38,6 +39,7 @@ export const schemaTypes = [
   articles,
   footer,
   articlesPage,
+  projectsPage,
   welcome,
   // ***Documents***
   page,

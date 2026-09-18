@@ -310,6 +310,15 @@ export type Welcome = {
   };
 };
 
+export type ProjectsPage = {
+  _id: string;
+  _type: "projectsPage";
+  _createdAt: string;
+  _updatedAt: string;
+  _rev: string;
+  projectsHeadline: string;
+};
+
 export type ArticlesPage = {
   _id: string;
   _type: "articlesPage";
@@ -780,5 +789,5 @@ export type Geopoint = {
   alt?: number;
 };
 
-export type AllSanitySchemaTypes = ArticleImageBlock | ArticleContent | ArticleImageSlider | Gallery | ImageCTA | ProjectCTA | SocialNetwork | LegalPage | ContactPerson | ContactBlock | Link | CallToAction | InfoSection | InlineRichText | BlockContent | Author | SanityImageCrop | SanityImageHotspot | Slug | Page | Welcome | ArticlesPage | Project | Article | Footer | Articles | Legal | About | Contact | Home | Settings | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
+export type AllSanitySchemaTypes = ArticleImageBlock | ArticleContent | ArticleImageSlider | Gallery | ImageCTA | ProjectCTA | SocialNetwork | LegalPage | ContactPerson | ContactBlock | Link | CallToAction | InfoSection | InlineRichText | BlockContent | Author | SanityImageCrop | SanityImageHotspot | Slug | Page | Welcome | ProjectsPage | ArticlesPage | Project | Article | Footer | Articles | Legal | About | Contact | Home | Settings | SanityAssistInstructionTask | SanityAssistTaskStatus | SanityAssistSchemaTypeAnnotations | SanityAssistOutputType | SanityAssistOutputField | SanityAssistInstructionContext | AssistInstructionContext | SanityAssistInstructionUserInput | SanityAssistInstructionPrompt | SanityAssistInstructionFieldRef | SanityAssistInstruction | SanityAssistSchemaTypeField | SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityImageMetadata | SanityFileAsset | SanityAssetSourceData | SanityImageAsset | Geopoint;
 export declare const internalGroqTypeReferenceTo: unique symbol;
