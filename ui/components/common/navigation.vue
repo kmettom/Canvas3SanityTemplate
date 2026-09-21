@@ -28,12 +28,6 @@ const navItemRefs = useTemplateRefsList();
 const navAniDuration = 0.15;
 const navAniY = 10;
 
-const route = useRoute();
-
-const homePage = computed(() => {
-  return route.name === "index";
-});
-
 const animateTextSpan = (text: HTMLElement) => {
   if (!text) return;
   const tl = gsap.timeline();

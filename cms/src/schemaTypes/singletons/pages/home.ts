@@ -12,13 +12,6 @@ export const home = defineType({
   ],
   fields: [
     defineField({
-      name: 'subheader',
-      title: 'Sub-header on the left side',
-      type: 'string',
-      group: 'content',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
       name: 'header',
       title: 'Header - first paragraph',
       type: 'inlineRichText',
@@ -26,16 +19,9 @@ export const home = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'header2',
-      title: 'Header - second paragraph (scrollable)',
+      name: 'about',
+      title: 'About paragraph',
       type: 'inlineRichText',
-      group: 'content',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'projectThumbsAmount',
-      title: 'Amount of project thumbs on Home page',
-      type: 'number',
       group: 'content',
       validation: (rule) => rule.required(),
     }),

@@ -532,10 +532,8 @@ export type Home = {
   _createdAt: string;
   _updatedAt: string;
   _rev: string;
-  subheader: string;
   header: InlineRichText;
-  header2: InlineRichText;
-  projectThumbsAmount: number;
+  about: InlineRichText;
 };
 
 export type Settings = {

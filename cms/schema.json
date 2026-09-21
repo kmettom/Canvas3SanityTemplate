@@ -3006,13 +3006,6 @@
           "type": "string"
         }
       },
-      "subheader": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "string"
-        },
-        "optional": false
-      },
       "header": {
         "type": "objectAttribute",
         "value": {
@@ -3021,18 +3014,11 @@
         },
         "optional": false
       },
-      "header2": {
+      "about": {
         "type": "objectAttribute",
         "value": {
           "type": "inline",
           "name": "inlineRichText"
-        },
-        "optional": false
-      },
-      "projectThumbsAmount": {
-        "type": "objectAttribute",
-        "value": {
-          "type": "number"
         },
         "optional": false
       }

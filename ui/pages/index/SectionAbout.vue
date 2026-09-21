@@ -2,43 +2,8 @@
   <Container id="about" additional-class="about-section">
     <h2 class="body-s about-headline">About</h2>
     <div class="body-l">
-      <div
-        v-canvas3-scroll-action="{
-          activeRange: 0.85,
-          activateOnce: true,
-          activateCallback: textAniCallback,
-        }"
-        class="about-txt"
-      >
-        Canvas3 is a Nuxt module, allowing for easy integration of threejs,
-        smoothscroll and scroll control.
-      </div>
-      <h3
-        v-canvas3-scroll-action="{
-          activeRange: 0.85,
-          activateOnce: true,
-          activateCallback: textAniCallback,
-        }"
-        class="about-txt features-headline"
-      >
-        Features:
-      </h3>
-      <div
-        v-canvas3-scroll-action="{
-          activeRange: 0.85,
-          activateOnce: true,
-          activateCallback: textAniCallback,
-        }"
-        class="about-txt"
-      >
-        → Layout component initializing Canvas3 with smooth scroll and ThreeJS
-        scene initialization<br />
-        → Single RequestAnimationFrame loop for performance<br />
-        → On scroll directive for scroll interactions, scroll speed change and
-        set element to active state<br />
-        → Image into ThreeJS mesh directive for easy imports of images to the
-        scene with scroll control and option to define uniforms<br />
-        → Canvas3 function exports for full control of ThreeJS scene and scroll
+      <div v-if="homePage" class="about-txt">
+        {{ homePage.about }}
       </div>
     </div>
   </Container>
@@ -49,35 +14,12 @@ import Container from "~/components/common/Container.vue";
 import { gsap } from "gsap";
 import { SplitText } from "gsap/SplitText";
 
-//TODO: proper type import export
-import type { ScrollActionBinding } from "../../../canvas3-nuxt/dist/runtime/types/types";
+import { homePageQuery } from "~/sanity/queries";
+import type { Home } from "~/sanity/types.ts";
+
+const { data: homePage } = await useSanityQuery<Home>(homePageQuery);
 
 gsap.registerPlugin(SplitText);
-
-function textAniCallback(itemEl: ScrollActionBinding) {
-  const parent = itemEl.elNode;
-  if (!parent) return;
-  const tl = gsap.timeline();
-  const lines = new SplitText(parent, {
-    type: "lines",
-    aria: "none",
-  }).lines;
-  const wrappedLines = new SplitText(lines, { type: "lines", aria: "none" })
-    .lines;
-  tl.set(wrappedLines, { opacity: 0, y: 50 });
-  tl.set(parent, { opacity: 1, overflow: "hidden" });
-  tl.set(lines, { opacity: 1, overflow: "hidden" });
-  tl.fromTo(
-    wrappedLines,
-    { y: 50, opacity: 1 },
-    {
-      duration: 0.3,
-      opacity: 1,
-      y: 0,
-      stagger: 0.1,
-    },
-  );
-}
 </script>
 
 <style lang="scss" scoped>
