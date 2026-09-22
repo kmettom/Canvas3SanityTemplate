@@ -1,9 +1,8 @@
 <template>
   <Container id="about" additional-class="about-section">
-    <h2 class="body-s about-headline">About</h2>
     <div class="body-l">
-      <div v-if="homePage" class="about-txt">
-        {{ homePage.about }}
+      <div v-if="homePage" class="about-headline">
+        <PortableText :value="homePage.about" />
       </div>
     </div>
   </Container>
@@ -11,15 +10,12 @@
 
 <script setup lang="ts">
 import Container from "~/components/common/Container.vue";
-import { gsap } from "gsap";
-import { SplitText } from "gsap/SplitText";
 
 import { homePageQuery } from "~/sanity/queries";
 import type { Home } from "~/sanity/types.ts";
+import { PortableText } from "@portabletext/vue";
 
 const { data: homePage } = await useSanityQuery<Home>(homePageQuery);
-
-gsap.registerPlugin(SplitText);
 </script>
 
 <style lang="scss" scoped>
@@ -39,7 +35,6 @@ gsap.registerPlugin(SplitText);
   font-weight: lighter;
 }
 .about-txt {
-  opacity: 0;
   @include respond-width($w-m) {
     margin-bottom: 10px;
   }
@@ -52,7 +47,6 @@ gsap.registerPlugin(SplitText);
     margin-bottom: 30px;
   }
   div {
-    opacity: 0;
     overflow: hidden;
   }
 }

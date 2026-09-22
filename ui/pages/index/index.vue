@@ -6,6 +6,9 @@
     <div class="page-section">
       <SectionAbout />
     </div>
+    <div class="page-section">
+      <SectionContact />
+    </div>
     <Footer />
   </div>
 </template>
@@ -14,6 +17,7 @@
 import SectionHero from "~/pages/index/SectionHero.vue";
 import SectionAbout from "~/pages/index/SectionAbout.vue";
 import Footer from "~/components/common/Footer.vue";
+import SectionContact from "~/pages/index/SectionContact.vue";
 </script>
 
 <style lang="scss"></style>
