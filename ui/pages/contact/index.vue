@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 v-if="contactPage" class="heading-1">
+    <h2 v-if="contactPage" class="contact-header heading-1">
       {{ contactPage.header }}
     </h2>
   </div>
@@ -13,4 +13,9 @@ import { contactPageQuery } from "~/sanity/queries";
 const { data: contactPage } = await useSanityQuery<Contact>(contactPageQuery);
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.contact-header {
+  text-align: center;
+  padding: 150px;
+}
+</style>

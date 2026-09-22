@@ -20,18 +20,16 @@ const { data: homePage } = await useSanityQuery<Home>(homePageQuery);
 
 <style lang="scss" scoped>
 .about-section {
-  display: grid;
-  grid-template-columns: 10fr 14fr;
-  text-transform: uppercase;
   padding-bottom: 125px;
   padding-top: 10vh;
+  max-width: 70%;
+  margin: 0;
   @include respond-width($w-xs) {
-    grid-template-columns: 1fr;
     padding: 10vh 10px 125px 10px;
   }
 }
 .about-headline {
-  margin-left: 20px;
+  margin-left: 50px;
   font-weight: lighter;
 }
 .about-txt {

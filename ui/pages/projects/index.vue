@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 v-if="projectsPage" class="heading-1">
+    <h2 v-if="projectsPage" class="projects-header heading-1">
       {{ projectsPage.projectsHeadline }}
     </h2>
   </div>
@@ -14,4 +14,9 @@ const { data: projectsPage } =
   await useSanityQuery<ProjectsPage>(projectsPageQuery);
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.projects-header {
+  text-align: center;
+  padding: 150px;
+}
+</style>

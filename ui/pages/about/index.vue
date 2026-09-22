@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 v-if="aboutPage" class="heading-1">
+    <h2 v-if="aboutPage" class="about-header heading-1">
       {{ aboutPage.header }}
     </h2>
   </div>
@@ -13,4 +13,9 @@ import { aboutPageQuery } from "~/sanity/queries";
 const { data: aboutPage } = await useSanityQuery<About>(aboutPageQuery);
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+.about-header {
+  text-align: center;
+  padding: 150px;
+}
+</style>

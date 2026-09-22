@@ -96,6 +96,7 @@ watch(
   overflow-y: hidden;
 
   a {
+    color: var(--dark-color);
     display: inline-block;
     position: relative;
   }

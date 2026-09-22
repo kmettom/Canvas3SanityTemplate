@@ -7,46 +7,19 @@
         </h2>
       </div>
     </Container>
-    <div class="hero-bg-image" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { PortableText } from "@portabletext/vue";
 import Container from "~/components/common/Container.vue";
-import gsap from "gsap";
-import { SplitText } from "gsap/SplitText";
-import { pageTransition } from "~/utils/animations/pageTransition";
 import { homePageQuery } from "~/sanity/queries";
 import type { Home } from "~/sanity/types.ts";
 
 const { data: homePage } = await useSanityQuery<Home>(homePageQuery);
-
-gsap.registerPlugin(SplitText);
-
-const imageIn = ref(false);
-
-const navigationStore = useNavigationStore();
-
-const heroSectionAnimation = () => {
-  const timeDelay = navigationStore.webFirstLoadDone
-    ? pageTransition.setup.duration * 2500
-    : 100;
-
-  setTimeout(() => {
-    imageIn.value = true;
-  }, timeDelay);
-};
-
-onMounted(() => {
-  heroSectionAnimation();
-});
 </script>
 
 <style lang="scss" scoped>
-.heading-1 {
-  color: var(--light-color);
-}
 .hero-section-wrapper {
   position: relative;
   @include respond-width($w-s) {
@@ -87,22 +60,6 @@ onMounted(() => {
   }
   p {
     position: relative;
-  }
-}
-.hero-bg-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -1;
-  @include respond-width($w-s) {
-    max-height: 660px;
-    filter: blur(15px);
-  }
-  * {
-    width: 100%;
-    height: 100%;
   }
 }
 </style>

@@ -128,8 +128,7 @@ const splitLineAnimation = (item: HTMLElement) => {
 <style lang="scss" scoped>
 .contact-section {
   position: relative;
-  color: var(--light-color);
-  //background-color: var(--light-color);
+  color: var(--dark-color);
   padding: 30vh 0 7vh;
   @include respond-width($w-xs) {
     padding: 35vh 0 12vh;
@@ -175,7 +174,7 @@ const splitLineAnimation = (item: HTMLElement) => {
     text-align: right;
   }
   a {
-    color: var(--light-color);
+    color: var(--dark-color);
     text-decoration: none;
   }
 }

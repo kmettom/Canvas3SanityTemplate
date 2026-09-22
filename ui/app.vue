@@ -24,6 +24,8 @@
         },
       }"
     />
+    <SectionContact />
+    <Footer />
   </NuxtLayout>
 
   <!--  TODO: Cursor implement -->
@@ -45,7 +47,9 @@ import { Canvas3Options } from "~/constants/canvas3-options";
 import WelcomeScreen from "~/components/common/WelcomeScreen.vue";
 import { waitOutDone } from "~/composables/useOutPromise";
 import { pageTransition } from "~/utils/animations/pageTransition";
-import { useAnimationAssets } from "~/stores/animationAssets";
+// import { useAnimationAssets } from "~/stores/animationAssets";
+import SectionContact from "~/pages/index/SectionContact.vue";
+import Footer from "~/components/common/Footer.vue";
 // import Cursor from "~/components/common/Cursor.vue";
 
 useSeoMeta({
@@ -83,7 +87,7 @@ const layout = "canvas3";
 const welcomeInit = ref(false);
 
 const displayStore = useDisplayStore();
-const animationAssets = useAnimationAssets();
+// const animationAssets = useAnimationAssets();
 
 const onCanvas3Ready = () => {
   pageTransition.init();
@@ -96,7 +100,7 @@ const onCanvas3Ready = () => {
 onMounted(async () => {
   welcomeInit.value = true;
   displayStore.init();
-  await animationAssets.init();
+  // await animationAssets.init();
 });
 
 const contentActive = ref(false);
