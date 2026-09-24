@@ -1,5 +1,7 @@
 # Canvas3 Sanity Template
 
+This is a template for Canvas3 starter and Sanity.io as CMS. For more details about Canvas3 module go to https://github.com/kmettom/Canvas3NuxtStarter
+
 ## Setup
 
 Install the dependencies:
