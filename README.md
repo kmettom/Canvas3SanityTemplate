@@ -4,6 +4,8 @@ This is a template for Canvas3 starter and Sanity.io as CMS. For more details ab
 
 ## Setup
 
+Requires Node `^22.22.3` or `>=24.15.0` (Nuxt 4.7). With nvm, run `nvm use` to pick up `.nvmrc`.
+
 Install the dependencies:
 
 ```bash

@@ -1,4 +1,5 @@
-import {CogIcon, BlockElementIcon} from '@sanity/icons'
+import {CogIcon} from '@sanity/icons/Cog'
+import {BlockElementIcon} from '@sanity/icons/BlockElement'
 import type {StructureBuilder, StructureResolver} from 'sanity/structure'
 import pluralize from 'pluralize-esm'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'

@@ -1,4 +1,4 @@
-import {DocumentTextIcon} from '@sanity/icons'
+import {DocumentTextIcon} from '@sanity/icons/DocumentText'
 import {format, parseISO} from 'date-fns'
 import {defineField, defineType, type Rule, SanityClient, StringRule, TitledListValue} from 'sanity'
 import {orderRankField, orderRankOrdering} from "@sanity/orderable-document-list";

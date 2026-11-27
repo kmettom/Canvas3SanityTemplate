@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": "22.x"
+    "node": "^22.22.3 || >=24.15.0"
   },
   "scripts": {
     "start": "node .output/server/index.mjs",
@@ -21,30 +21,33 @@
   },
   "devDependencies": {
     "@nuxt-modules/compression": "^0.1.0",
-    "@nuxt/eslint": "^0.7.4",
+    "@nuxt/eslint": "^1.17.0",
     "@nuxtjs/sanity": "^2.5.0",
-    "@nuxtjs/style-resources": "^1.2.1",
-    "@pinia/nuxt": "^0.9.0",
-    "@portabletext/vue": "^2.0.0",
-    "@types/big.js": "^6.2.2",
-    "@types/three": "^0.183.0",
-    "@vercel/speed-insights": "^1.2.0",
-    "@vueuse/core": "^12.4.0",
+    "@nuxtjs/style-resources": "^1.2.2",
+    "@pinia/nuxt": "^1.0.3",
+    "@portabletext/vue": "^2.0.1",
+    "@types/big.js": "^7.0.0",
+    "@types/three": "~0.178.1",
+    "@vercel/speed-insights": "^2.1.1",
+    "@vueuse/core": "^15.1.0",
     "big.js": "^7.0.1",
-    "gsap": "3.14.2",
-    "nuxt": "^4.4.5",
-    "prettier": "^3.6.2",
-    "sanity": "^6.14.1",
-    "sass-embedded": "^1.89.2",
-    "three": "^0.178.0",
-    "typescript": "^5.7.2",
-    "viem": "^0.2.1",
+    "eslint": "^10.15.0",
+    "gsap": "3.15.1",
+    "nuxt": "^4.7.0",
+    "pinia": "^4.1.0",
+    "prettier": "^3.10.1",
+    "sanity": "^6.25.0",
+    "sass-embedded": "^1.108.2",
+    "three": "~0.178.0",
+    "three-msdf-text-utils": "^1.5.0",
+    "typescript": "~6.0.3",
+    "viem": "^2.58.8",
     "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-glsl": "^1.5.1",
-    "vue": "^3.5.34",
-    "vue-router": "^4.5.1"
+    "vite-plugin-glsl": "^1.6.4",
+    "vue": "^3.5.46",
+    "vue-router": "^5.5.3"
   },
   "dependencies": {
-    "@canvas3/nuxt": "^0.1.56"
+    "@canvas3/nuxt": "^0.1.74"
   }
 }

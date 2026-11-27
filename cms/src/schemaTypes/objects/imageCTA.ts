@@ -1,5 +1,5 @@
 import {defineField, defineType} from 'sanity'
-import {LeaveIcon} from '@sanity/icons'
+import {LeaveIcon} from '@sanity/icons/Leave'
 
 export const imageCTA = defineType({
   name: 'imageCTA',
